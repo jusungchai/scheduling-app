@@ -1,0 +1,12 @@
+.time {
+  width: 100%;
+}
+
+.hour {
+  font-size: xx-large;
+  border: 2px black solid;
+    border-top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

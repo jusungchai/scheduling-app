@@ -5,6 +5,7 @@ import weeks from './data/Weeks'
 import reportIntervals from './data/ReportIntervals'
 import Header from './components/Header'
 import Day from './components/Day'
+import Time from './components/Time'
 
 function App() {
   const listOfDrivers = drivers.map((d) => d.name)
@@ -19,10 +20,10 @@ function App() {
         </div>
         <div id="bot">
           <div id="left">
-            {/* {generate time here} */}
+            <Time />
           </div>
           <div id="right">
-            {/* {generate events here} */}
+            generate events here
           </div>
         </div>
       </div>

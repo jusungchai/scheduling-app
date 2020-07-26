@@ -17,3 +17,17 @@
   padding-bottom: 1em;
   border-bottom: 1px solid black;  
 }
+
+#bot {
+  display: flex;
+}
+
+#left {
+  display: flex;
+  flex: 1;
+}
+
+#right {
+  display: flex;
+  flex: 7;
+}
