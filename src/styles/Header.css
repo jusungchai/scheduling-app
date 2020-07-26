@@ -1,0 +1,14 @@
+#inner-header {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+#report-container {
+  display: flex;
+}
+
+#week-dropdown {
+  overflow-y: scroll;
+  height: 500px;
+}

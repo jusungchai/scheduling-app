@@ -1,24 +1,30 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import './styles/App.css';
+import drivers from './data/Drivers'
+import weeks from './data/Weeks'
+import reportIntervals from './data/ReportIntervals'
+import Header from './components/Header'
 
 function App() {
+  const listOfDrivers = drivers.map((d) => d.name)
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <div id="main-container">
+        <div id="header">
+          <Header listOfDrivers={listOfDrivers} weeks={weeks} reportIntervals={reportIntervals} />
+        </div>
+        <div id="top">
+          {/* {generate days here} */}
+        </div>
+        <div id="bot">
+          <div id="left">
+            {/* {generate time here} */}
+          </div>
+          <div id="right">
+            {/* {generate events here} */}
+          </div>
+        </div>
+      </div>
     </div>
   );
 }
