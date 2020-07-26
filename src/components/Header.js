@@ -27,7 +27,7 @@ export default function Header(props) {
   return (
     <div id="inner-header">
       <div className="dropdown" id="driver-list">
-        <button className="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style={{ width: "200px" }}>
+        <button className="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style={{ width: "50%" }}>
           {driver}
         </button>
         <div className="dropdown-menu" aria-labelledby="dropdownMenu2">
@@ -36,7 +36,7 @@ export default function Header(props) {
       </div>
 
       <div className="dropdown" id="week-list">
-        <button className="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style={{ width: "200px" }}>
+        <button className="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style={{ width: "50%" }}>
           {week}
         </button>
         <div className="dropdown-menu" aria-labelledby="dropdownMenu2" id="week-dropdown">
@@ -45,12 +45,12 @@ export default function Header(props) {
       </div>
 
       <div id="report-container">
-        <button className="btn btn-secondary" type="button" onClick={createCSV} style={{ width: "200px" }}>
+        <button className="btn btn-secondary" type="button" onClick={createCSV} style={{ width: "40%", marginRight: "1em" }}>
           Download Schedule
         </button>
 
-        <div className="dropdown" id="report-interval-list">
-          <button className="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style={{ width: "150px" }}>
+        <div className="dropdown" id="report-interval-list" style={{ width: "30%" }}>
+          <button className="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style={{ width: "100%" }}>
             {reportInterval}
           </button>
           <div className="dropdown-menu" aria-labelledby="dropdownMenu2">
