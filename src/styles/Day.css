@@ -1,0 +1,17 @@
+.day {
+  display: flex;
+  padding-top: 1em;
+}
+
+.x-axis-days {
+  display: flex;
+  flex: 1;
+  justify-content: center;
+  border-style: solid;
+  border-left: 0px;
+  font-size: xx-large;
+}
+
+#empty-block {
+  border-left: 2px solid black;
+}

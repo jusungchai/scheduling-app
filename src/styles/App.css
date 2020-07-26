@@ -8,6 +8,7 @@
   display: flex;
   width: 1920px;
   padding: 1em;
+  flex-direction: column;
 }
 
 #header {
