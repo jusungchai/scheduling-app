@@ -6,18 +6,18 @@ export default function Header(props) {
   const [week, setWeek] = useState("Select Week")
   const [reportInterval, setReportInterval] = useState("Select Interval")
 
-  const { listOfDrivers, weeks, reportIntervals } = props
+  const { drivers, weeks, reportIntervals } = props
 
   const driversList = () => {
-    return listOfDrivers.map((name, i) => <button className="dropdown-item" type="button" key={i} onClick={() => setDriver(name)}>{name}</button>)
+    return drivers.map((name, i) => <button className="dropdown-item" type="button" key={i} onClick={() => { setDriver(name); props.setDriver(name) }}>{name}</button>)
   }
 
   const weeksList = () => {
-    return weeks.map((week, i) => <button className="dropdown-item" type="button" key={i} onClick={() => setWeek(`Week ${week}`)}>{`Week ${week}`}</button>)
+    return weeks.map((week, i) => <button className="dropdown-item" type="button" key={i} onClick={() => { setWeek(`Week ${week}`); props.setWeek(week) }}>{`Week ${week}`}</button>)
   }
 
   const reportIntervalsList = () => {
-    return reportIntervals.map((interval, i) => <button className="dropdown-item" type="button" key={i} onClick={() => setReportInterval(`${interval} Days`)}>{`${interval} Days`}</button>)
+    return reportIntervals.map((interval, i) => <button className="dropdown-item" type="button" key={i} onClick={() => { setReportInterval(`${interval} Days`); props.setInterval(interval) }}>{`${interval} Days`}</button>)
   }
 
   const createCSV = () => {
