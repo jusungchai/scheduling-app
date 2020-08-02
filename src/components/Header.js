@@ -20,8 +20,8 @@ export default function Header(props) {
     return reportIntervals.map((interval, i) => <button className="dropdown-item" type="button" key={i} onClick={() => { setReportInterval(`${interval} Days`); props.setInterval(interval) }}>{`${interval} Days`}</button>)
   }
 
-  const createCSV = () => {
-    console.log("CSV Created!!!")
+  const createCSV = () => {    
+    props.createCSV()    
   }
 
   return (

@@ -3,22 +3,23 @@ const createScheduleObject = () => {
   for (let i = 1; i <= 52; i++) {
     const days = {}
     for (let j = 1; j <= 7; j++) {
-      days[`d${j}`] = new Array(24)
+      days[j] = new Array(24).fill({ start: "", end: "", info: "", taskID: "", background: "white" })
     }
-    schedule[`w${i}`] = days
+    schedule[i] = days
   }
+
   return schedule
 }
 
 const initializeScheduler = (drivers) => {
-  const infoArray = []
-  drivers.forEach((driver) => {
-    infoArray.push({
-      name: driver,
+  const infoObject = {}
+  drivers.forEach(driver => {
+    infoObject[driver] = {
       schedule: createScheduleObject()
-    })
+    }
   })
-  return infoArray
+
+  return infoObject
 }
 
 module.exports = { initializeScheduler }

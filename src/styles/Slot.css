@@ -1,0 +1,33 @@
+.slot {
+  display: flex;
+  flex: 1;
+  border-style: groove;
+  justify-content: center;
+  align-items: center;
+}
+
+#modal-body {
+  display: flex;
+  flex-direction: column;
+}
+
+#modal-time {
+  display: flex;
+}
+
+#modal-info {
+  display: flex;
+  margin-top: 1em;
+}
+
+#modal-title-header {
+  white-space: pre-wrap;
+}
+
+#slot-info {
+  background: blueviolet;
+  color: white;
+  border-radius: 5px;
+  width: 50%;
+  text-align: center;
+}

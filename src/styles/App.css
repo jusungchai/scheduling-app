@@ -31,3 +31,11 @@
   display: flex;
   flex: 7;
 }
+
+#tutorial {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: xxx-large;
+}
