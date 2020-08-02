@@ -15,19 +15,11 @@ function App() {
   const [driver, setDriver] = useState(null)
   const [interval, setInterval] = useState(null)
 
-  const createCSV = () => {
-    if (driver && interval) {
-      console.log("hahahah")
-    } else {
-      alert("Please select Driver and Report Interval")
-    } 
-  }
-
   return (
     <div className="App">
       <div id="main-container">
         <div id="header">
-          <Header drivers={drivers} weeks={weeks} reportIntervals={reportIntervals} setDriver={driver => setDriver(driver)} setWeek={week => setWeek(week)} setInterval={interval => setInterval(interval)} createCSV={() => createCSV()}/>
+          <Header drivers={drivers} weeks={weeks} reportIntervals={reportIntervals} setDriver={driver => setDriver(driver)} setWeek={week => setWeek(week)} setInterval={interval => setInterval(interval)} data={database}/>          
         </div>
         {
           (driver && week) ?

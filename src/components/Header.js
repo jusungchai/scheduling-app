@@ -1,12 +1,14 @@
 import React, { useState } from 'react'
+import { CSVLink } from "react-csv";
 import '../styles/Header.css'
+const { generateCSVData } = require("../helpers/functions")
 
 export default function Header(props) {
   const [driver, setDriver] = useState("Select Driver")
   const [week, setWeek] = useState("Select Week")
   const [reportInterval, setReportInterval] = useState("Select Interval")
 
-  const { drivers, weeks, reportIntervals } = props
+  const { drivers, weeks, reportIntervals, data } = props
 
   const driversList = () => {
     return drivers.map((name, i) => <button className="dropdown-item" type="button" key={i} onClick={() => { setDriver(name); props.setDriver(name) }}>{name}</button>)
@@ -17,11 +19,15 @@ export default function Header(props) {
   }
 
   const reportIntervalsList = () => {
-    return reportIntervals.map((interval, i) => <button className="dropdown-item" type="button" key={i} onClick={() => { setReportInterval(`${interval} Days`); props.setInterval(interval) }}>{`${interval} Days`}</button>)
+    return reportIntervals.map((interval, i) => <button className="dropdown-item" type="button" key={i} onClick={() => { setReportInterval(interval); props.setInterval(interval) }}>{`${interval} Days`}</button>)
   }
 
-  const createCSV = () => {    
-    props.createCSV()    
+  const errorCheck = () => {
+    if (driver === "Select Driver" || reportInterval === "Select Interval") {
+      alert("Please choose a driver and report interval")
+      return false
+    }
+    return true
   }
 
   return (
@@ -45,13 +51,11 @@ export default function Header(props) {
       </div>
 
       <div id="report-container">
-        <button className="btn btn-secondary" type="button" onClick={createCSV} style={{ width: "40%", marginRight: "1em" }}>
-          Download Schedule
-        </button>
+        <CSVLink className="btn btn-secondary" id="report-button" data={generateCSVData(driver, reportInterval, data[driver])} onClick={() => errorCheck() }>Generate Report</CSVLink>
 
         <div className="dropdown" id="report-interval-list" style={{ width: "30%" }}>
           <button className="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style={{ width: "100%" }}>
-            {reportInterval}
+            {`${reportInterval} Days`}
           </button>
           <div className="dropdown-menu" aria-labelledby="dropdownMenu2">
             {reportIntervalsList()}
