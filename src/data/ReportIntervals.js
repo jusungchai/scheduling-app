@@ -6,4 +6,4 @@ const reportIntervals = [
   28
 ]
 
-module.exports = reportIntervals
+export default reportIntervals

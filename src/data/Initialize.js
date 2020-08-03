@@ -22,4 +22,4 @@ const initializeScheduler = (drivers) => {
   return infoObject
 }
 
-module.exports = { initializeScheduler }
+export { initializeScheduler }

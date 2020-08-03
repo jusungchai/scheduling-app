@@ -8,4 +8,4 @@ const daysArray = [
   "Saturday"
 ]
 
-module.exports = daysArray
+export default daysArray

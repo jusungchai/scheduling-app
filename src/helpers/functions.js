@@ -117,4 +117,4 @@ const generateCSVData = (driver, interval, data) => {
   return csvData
 }
 
-module.exports = { generateRangedArray, createTask, deleteTasks, inRange, generateCSVData }
+export { generateRangedArray, createTask, deleteTasks, inRange, generateCSVData }
